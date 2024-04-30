@@ -2,4 +2,8 @@
 
 This is MiniProject 1 of a 10 part series.
 
-This is a To-do list web application built using Vue 3 + Vite + TailWindCSS. 
+This is a To-do list web application built using:
+- Vue 3 
+- Vite 
+- TailWindCSS
+- Firebase
