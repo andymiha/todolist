@@ -6,7 +6,7 @@ This is a To-do list web application built using:
 - Vue 3 
 - Vite 
 - TailWindCSS
-- Firebase1
+- Firebase
 
 # Description
 
