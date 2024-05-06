@@ -13,7 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install -g vite && npm install && vite build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      # Check if branch is staging before deployment
+      - name: Check if branch is staging
+        if: github.ref == 'refs/heads/staging'
+        run: echo "This is a test run on staging branch. Deployment will not occur."
+      # Actual deployment steps (only executed on main branch)
+      - name: Deploy to Firebase Hosting
+        if: github.ref == 'refs/heads/main'
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TODOLIST_1B7E3 }}
